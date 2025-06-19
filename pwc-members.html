@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWC Members - Placement Portal</title>
+    <!-- External CSS for navigation and shared styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+.community-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.community-dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: #555;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #444;
+    min-width: 200px;
+    max-width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1001;
+    border-radius: 3px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #666;
+}
+
+.new-badge {
+    background-color: #28a745;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    margin-left: 8px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.community-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.hero-content {
+    padding: 40px 20px;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Iframe Section */
+.iframe-container {
+    width: 100%;
+    height: calc(100vh - 60px); /* Adjusted for nav and footer */
+    overflow: hidden;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Content Section */
+.content {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.content p, .content ol, .content ul {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.content-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px 0;
+    display: block;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .community-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .dropdown-content {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 90vw;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .cta-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+* {
+  font-family: Nunito, sans-serif;
+}
+
+.responsive-cell-block {
+  min-height: 75px;
+}
+
+.text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
+}
+
+.responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: space-evenly;
+}
+
+.team-head-text {
+  font-size: 48px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.team-head-text {
+  line-height: 50px;
+  width: 100%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 50px;
+  margin-left: 0px;
+}
+
+.container {
+  max-width: 1380px;
+  margin-top: 60px;
+  margin-right: auto;
+  margin-bottom: 60px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-left: 30px;
+}
+
+.card {
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  padding-right: 25px;
+  padding-bottom: 30px;
+  padding-left: 25px;
+}
+
+.card-container {
+  width: 280px;
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.position {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+}
+
+.feature-text {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  color: rgb(122, 122, 122);
+  line-height: 30px;
+}
+
+.social-icons {
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-image-wrapper {
+  clip-path: circle(50% at 50% 50%);
+  width: 130px;
+  height: 130px;
+}
+
+.team-member-image {
+  max-width: 100%;
+}
+
+@media (max-width: 500px) {
+  .card-container {
+    width: 100%;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 25px;
+    margin-left: 0px;
+  }
+}
+
+/* Styling for the social icons container */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Space between icons */
+  margin-top: 10px; /* Space above icons */
+  padding: 5px 0;
+}
+
+/* General styling for all icons */
+.social-icons a {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover effects */
+}
+
+/* Specific icon styling */
+.mail-icon,
+.phone-icon,
+.linkedin-icon {
+  width: 24px; /* Icon size */
+  height: 24px;
+  object-fit: contain; /* Ensure icons scale properly */
+}
+
+/* Hover effects for icons */
+.social-icons a:hover .mail-icon,
+.social-icons a:hover .phone-icon,
+.social-icons a:hover .linkedin-icon {
+  transform: scale(1.2); /* Slightly enlarge on hover */
+  opacity: 0.8; /* Subtle fade effect */
+}
+
+/* Optional: Add specific colors for each icon (adjust as needed) */
+.mail-icon {
+  filter: invert(38%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(95%) contrast(101%); /* Blue tint for email */
+}
+
+.phone-icon {
+  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(94%) contrast(101%); /* Green tint for phone */
+}
+
+.linkedin-icon {
+  filter: invert(12%) sepia(98%) saturate(3492%) hue-rotate(197deg) brightness(95%) contrast(101%); /* LinkedIn blue tint */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 10px; /* Reduce gap on tablets */
+  }
+
+  .mail-icon,
+  .phone-icon,
+  .linkedin-icon {
+    width: 20px; /* Slightly smaller icons */
+    height: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .social-icons {
+    gap: 8px; /* Further reduce gap on mobile */
+  }
+
+  .mail-icon,
+  .phone-icon,
+  .linkedin-icon {
+    width: 18px; /* Smaller icons for mobile */
+    height: 18px;
+  }
+}
+        /* General Reset for PWC Content */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* Body Styling */
+        body {
+            background: #e9ecef;
+            color: #212529;
+            line-height: 1.6;
+        }
+
+        /* Main Content Container */
+        .pwc-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Team Header */
+        .pwc-team-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1c2526;
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+        }
+
+        .pwc-team-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: #007bff;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Section Header */
+        .pwc-section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1c2526;
+            margin: 40px 0 20px;
+            border-left: 6px solid #007bff;
+            padding-left: 15px;
+        }
+
+        /* Team Grid */
+        .pwc-team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 10px;
+        }
+
+        /* Card Styling */
+        .pwc-card-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .pwc-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+        }
+
+        .pwc-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .pwc-card-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .pwc-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .pwc-card:hover .pwc-card-image img {
+            transform: scale(1.08);
+        }
+
+        .pwc-card-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1c2526;
+            margin: 15px 0 5px;
+        }
+
+        .pwc-card-position {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 10px;
+        }
+
+        .pwc-card-description {
+            font-size: 0.95rem;
+            color: #343a40;
+            padding: 0 20px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Information */
+        .pwc-contact-info {
+            font-size: 0.9rem;
+            color: #343a40;
+            padding: 0 20px;
+            margin-bottom: 15px;
+        }
+
+        .pwc-contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .pwc-contact-info i {
+            color: #007bff;
+            font-size: 1rem;
+        }
+
+        .pwc-contact-info a {
+            color: #343a40;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .pwc-contact-info a:hover {
+            color: #007bff;
+        }
+
+        /* Social Icons */
+        .pwc-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            padding: 15px 0;
+        }
+
+        .pwc-social-links a {
+            color: #007bff;
+            font-size: 1.3rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .pwc-social-links a:hover {
+            color: #0056d2;
+            transform: scale(1.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .pwc-team-title {
+                font-size: 2.4rem;
+            }
+
+            .pwc-section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pwc-team-title {
+                font-size: 2rem;
+            }
+
+            .pwc-section-title {
+                font-size: 1.5rem;
+            }
+
+            .pwc-card {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .pwc-team-title {
+                font-size: 1.6rem;
+            }
+
+            .pwc-section-title {
+                font-size: 1.3rem;
+            }
+
+            .pwc-team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pwc-social-links {
+                gap: 12px;
+            }
+
+            .pwc-social-links a {
+                font-size: 1.1rem;
+            }
+
+            .pwc-contact-info {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Placement Portal</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="how-to-check-placement-data.html">Check Placement Data</a></li>
+            <li><a href="how-to-edit-profile.html">Edit Profile</a></li>
+            <li><a href="how-to-apply-noc.html">Apply for NOC</a></li>
+            <li><a href="pwc-members.html">PWC Members</a></li>
+        </ul>
+        <div class="community-links">
+            <div class="community-dropdown">
+                <button class="dropbtn">CSE Community</button>
+                <div class="dropdown-content">
+                    <a href="https://example.com/cse-offer1" target="_blank">Google Off-Campus 2025</a>
+                    <a href="https://example.com/cse-offer2" target="_blank">Microsoft SWE Internship</a>
+                    <a href="https://example.com/cse-offer3" target="_blank">Amazon SDE Role</a>
+                    <a href="https://example.com/cse-offer4" target="_blank">Meta AI Engineer <span class="new-badge">New</span></a>
+                </div>
+            </div>
+            <div class="community-dropdown">
+                <button class="dropbtn">ECE Community</button>
+                <div class="dropdown-content">
+                    <a href="https://example.com/ece-offer1" target="_blank">Qualcomm Hardware Engineer</a>
+                    <a href="https://example.com/ece-offer2" target="_blank">Texas Instruments Analog Design</a>
+                    <a href="https://example.com/ece-offer3" target="_blank">Intel VLSI Internship</a>
+                    <a href="https://example.com/ece-offer4" target="_blank">NVIDIA Embedded Systems <span class="new-badge">New</span></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pwc-container">
+        <h1 class="pwc-team-title">
+            Placement Leadership and Working Committee (PWC) Members
+        </h1>
+        <!-- Placement Incharge Section -->
+        <h2 class="pwc-section-title">
+            Placement Incharge
+        </h2>
+        <div class="pwc-team-grid">
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="https://www.iiitg.ac.in/uploads/2024/07/15/d92b1f68f86d729368d40a5edfbc2f97.jpg" alt="Dr. Rakesh Biswas">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Dr. Rakesh Biswas
+                    </h3>
+                    <p class="pwc-card-position">
+                        Placement Incharge, Assistant Professor (ECE)
+                    </p>
+                    <p class="pwc-card-description">
+                        Leads placement activities, fostering industry connections and guiding students for successful careers in Electronics and Communication Engineering.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:b.rakesh@iiitg.ac.in">b.rakesh@iiitg.ac.in</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:7908418818">7908418818</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/rakesh-biswas" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="https://www.iiitg.ac.in/uploads/2024/07/16/3b614aef97518db846756dbf155fe4d1.jpg" alt="Dr. Shubha Brata Nath">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Dr. Shubha Brata Nath
+                    </h3>
+                    <p class="pwc-card-position">
+                        Associate Placement Incharge, Assistant Professor (CSE)
+                    </p>
+                    <p class="pwc-card-description">
+                        Oversees placement strategies, leveraging expertise in Computer Science to enhance student opportunities.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:shubha@iiitg.ac.in">shubha@iiitg.ac.in</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:9051055674">9051055674</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/shubha-nath" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PWC Working Committee Section -->
+        <h2 class="pwc-section-title">
+            PWC Working Committee Members
+        </h2>
+        <div class="pwc-team-grid">
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="images/pic_mine_200,260Jpg.jpg" alt="Aditya Krishna Jaiswal">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Aditya Krishna Jaiswal
+                    </h3>
+                    <p class="pwc-card-position">
+                        B.Tech ECE (2026 Graduating Year)
+                    </p>
+                    <p class="pwc-card-description">
+                        Coordinates placement drives and supports logistics for effective recruitment.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:aditya.jaiswal@iiitg.ac.in">aditya.jaiswal@iiitg.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/aditya-jaiswal" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="images/IMG_0375.JPG" alt="Vamika Chaturvedi">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Vamika Chaturvedi
+                    </h3>
+                    <p class="pwc-card-position">
+                        B.Tech ECE (2026 Graduating Year)
+                    </p>
+                    <p class="pwc-card-description">
+                        Assists in student outreach and communication with recruiters.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:vamika.chaturvedi@iiitg.ac.in">vamika.chaturvedi@iiitg.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/vamika-chaturvedi" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="images/2201127.png" alt="Naman Jain">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Naman Jain
+                    </h3>
+                    <p class="pwc-card-position">
+                        B.Tech ECE (2026 Graduating Year)
+                    </p>
+                    <p class="pwc-card-description">
+                        Manages placement data and supports event organization.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:naman.jain@iiitg.ac.in">naman.jain@iiitg.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/naman-jain" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="images/IMG-20250616-WA0039.jpg" alt="Arnav Raj">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Arnav Raj
+                    </h3>
+                    <p class="pwc-card-position">
+                        B.Tech ECE (2026 Graduating Year)
+                    </p>
+                    <p class="pwc-card-description">
+                        Facilitates campus recruitment events and student training sessions.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:arnav.raj@iiitg.ac.in">arnav.raj@iiitg.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/arnav-raj" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="images/20250616_110015.jpg" alt="Kartik Saini">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Kartik Saini
+                    </h3>
+                    <p class="pwc-card-position">
+                        B.Tech CSE (2026 Graduating Year)
+                    </p>
+                    <p class="pwc-card-description">
+                        Supports technical coordination for placement activities.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:kartik.saini@iiitg.ac.in">kartik.saini@iiitg.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/kartik-saini" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="images/Sridhar.jpg" alt="Sridhar Tuli">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Sridhar Tuli
+                    </h3>
+                    <p class="pwc-card-position">
+                        B.Tech CSE (2026 Graduating Year)
+                    </p>
+                    <p class="pwc-card-description">
+                        Organizes workshops and training for placement preparation.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:sridhar.tuli@iiitg.ac.in">sridhar.tuli@iiitg.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/sridhar-tuli" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="https://via.placeholder.com/320x220?text=Ishaan+Das" alt="Ishaan Das">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Ishaan Das
+                    </h3>
+                    <p class="pwc-card-position">
+                        B.Tech CSE (2026 Graduating Year)
+                    </p>
+                    <p class="pwc-card-description">
+                        Coordinates student registrations and placement schedules.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:ishaan.das@iiitg.ac.in">ishaan.das@iiitg.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/ishaan-das" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="images/Image 1.jpg" alt="Snigdha Roy Chowdhury">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Snigdha Roy Chowdhury
+                    </h3>
+                    <p class="pwc-card-position">
+                        M.Tech ECE (2026 Graduating Year)
+                    </p>
+                    <p class="pwc-card-description">
+                        Supports placement documentation and student mentoring.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:snigdha.roy@iiitg.ac.in">snigdha.roy@iiitg.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/snigdha-roy" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="images/Rakesh.jpg" alt="Rakesh Das">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Rakesh Das
+                    </h3>
+                    <p class="pwc-card-position">
+                        M.Tech CSE (2026 Graduating Year)
+                    </p>
+                    <p class="pwc-card-description">
+                        Contributes to placement strategy and industry outreach.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:rakesh.das@iiitg.ac.in">rakesh.das@iiitg.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/rakesh-das" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="images/IMG_0593~2.JPG" alt="Abhiraj Tomar">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Abhiraj Tomar
+                    </h3>
+                    <p class="pwc-card-position">
+                        B.Tech ECE (2027 Graduating Year)
+                    </p>
+                    <p class="pwc-card-description">
+                        Assists in placement event planning and execution.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:abhiraj.tomar@iiitg.ac.in">abhiraj.tomar@iiitg.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/abhiraj-tomar" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pwc-card-wrapper">
+                <div class="pwc-card">
+                    <div class="pwc-card-image">
+                        <!-- Replace with actual image -->
+                        <img src="https://via.placeholder.com/320x220?text=Pranay+Siwach" alt="Pranay Siwach">
+                    </div>
+                    <h3 class="pwc-card-name">
+                        Pranay Siwach
+                    </h3>
+                    <p class="pwc-card-position">
+                        B.Tech CSE (2027 Graduating Year)
+                    </p>
+                    <p class="pwc-card-description">
+                        Supports student preparation and placement coordination.
+                    </p>
+                    <div class="pwc-contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:pranay.siwach@iiitg.ac.in">pranay.siwach@iiitg.ac.in</a>
+                        </p>
+                    </div>
+                    <div class="pwc-social-links">
+                        <a href="https://www.linkedin.com/in/pranay-siwach" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const menuToggle = document.querySelector('.pwc-menu-toggle');
+        const navLinks = document.querySelector('.pwc-nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
